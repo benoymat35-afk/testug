@@ -1,18 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Video Player</title>
+  <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>User Guide Video</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      /* background-color: #f0f9ff */; /* Light, visually appealing background color */
+	  background-color: #9ecee8; /* Light, visually appealing background color */
+      margin: 0;
+      padding: 20px;
+      padding-bottom: 100px; /* Additional bottom padding to accommodate the fixed footer */
+    }
+    h1 {
+      text-align: center;
+      color: #F17121;
+      margin-bottom: 30px;
+    }
+    h4 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 15px;
+    }	
+	h5 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 15px;
+    }
+	    /* Responsive grid for video tiles */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .video-item {
+      background: #ffffff;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    .video-item h3 {
+      margin: 10px 0 0;
+      font-size: 1.1em;
+      color: #333;
+    }
+    .video-item video {
+      width: 100%;
+      height: auto;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+	.modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.7);
+    }
+    .modal-content {
+      background-color: #fff;
+      margin: 10% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 800px;
+      border-radius: 8px;
+    }
+    .close-button {
+      float: right;
+      font-size: 1.2em;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    /* GSK logo positioned at bottom right */
+    footer {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+    }
+    footer img {
+      width: 150px;
+      height: auto;
+    }
+  </style>
 </head>
 <body>
+   <h1> Learn how to use the features in your Meeting Room </h1>
+  <h4>Video tutorials for Microsoft Teams Rooms with Cisco Navigator touch controller</h4>
 
-    <h2>Video Test</h2>
+  <div class="video-grid">
+ <div class="video-item" onclick="openModal('video1.mp4')">
+      <video src="mtrnavigatorjoinscheduledmeeting.webm" type="Video/webm></video>
+      <h3>Learning Videos - Open Cisco Side panel on Cisco Touch panel</h3>
+    </div>
+    <div class="video-item">
+      <video controls src="https://000000000000000000000000000000004366da0368eexc9b9prd-st1.appspaceusercontent.com/content/2d44b987-3a8b-4a42-971b-12f73a629fc4/466dc97f-4d33-4cb5-996c-6186fb08cf74/o/1771263602/mtrnavigatormeetnow.mp4"></video>
+      <h3>Start a New Meeting</h3>
+    </div>
+    <div class="video-item">
+      <video controls src="https://000000000000000000000000000000004366da0368eexc9b9prd-st1.appspaceusercontent.com/content/2d44b987-3a8b-4a42-971b-12f73a629fc4/59f77f51-1299-420d-94ca-cde9222ef69c/o/1771263575/mtrnavigatorsharewiredconnection.mp4"></video>
+      <h3>Share Content using Wired Connection</h3>
+    </div>
+    <div class="video-item">
+      <video controls src="https://000000000000000000000000000000004366da0368eexc9b9prd-st1.appspaceusercontent.com/content/2d44b987-3a8b-4a42-971b-12f73a629fc4/c28b9764-5c6a-4e53-bbdf-f51032c31236/o/1771263628/mtrnavigatorjoinscheduledmeeting.mp4"></video>
+      <h3>Join Scheduled Meeting</h3>
+    </div>
+    <div class="video-item">
+      <video controls src="https://000000000000000000000000000000004366da0368eexc9b9prd-st1.appspaceusercontent.com/content/2d44b987-3a8b-4a42-971b-12f73a629fc4/f577aea6-2006-4c31-b9b7-cd7ab0598b91/o/1771263653/mtrnavigatorjoinqr.mp4"></video>
+      <h3>Join a Meeting Using QR Code</h3>
+    </div>
+    <div class="video-item">
+      <video controls src="https://000000000000000000000000000000004366da0368eexc9b9prd-st1.appspaceusercontent.com/content/2d44b987-3a8b-4a42-971b-12f73a629fc4/1b71c9d9-edd1-4479-a23b-b280ed85d18b/o/1771327815/mtrnavigatorsharemiracast.mp4"></video>
+      <h3>Share Wirelessly with Miracast</h3>
+    </div>
+    <div class="video-item">
+      <video controls src="https://000000000000000000000000000000004366da0368eexc9b9prd-st1.appspaceusercontent.com/content/2d44b987-3a8b-4a42-971b-12f73a629fc4/1577cae3-ba09-4ced-b7fd-8207f9f989c0/o/1771327827/mtrnavigatorjoinwebexzoomid.mp4"></video>
+      <h3>Join a Webex or Zoom Meeting</h3>
+	  </div>
+	      <div class="video-item">
+      <video controls src="https://000000000000000000000000000000004366da0368eexc9b9prd-st1.appspaceusercontent.com/content/2d44b987-3a8b-4a42-971b-12f73a629fc4/b466510d-51ac-443d-be8d-7c164083efbe/o/1771327839/mtrnavigatorjoinroomaudio.mp4"></video>
+      <h3>Add Room Device to a Scheduled Meeting</h3>
+    </div>
+    </div>
+	<h5>Note: This learning feature is currently in beta mode and has been enabled for testing purposes. Functionality may change prior to general availability.<h5>
+	  </div>
 
-    <video controls playsinline preload="metadata" width="640" height="360">
-       <source src="mtrnavigatorjoinscheduledmeeting.webm" type="Video/webm">
-        Your browser does not support the HTML5 video tag.
-    </video>
+  <footer>
+    <!-- Placeholder image for the GSK logo at the bottom right corner -->
+    <img src="https://000000000000000000000000000000004366da0368eexc9b9prd-st1.appspaceusercontent.com/content/2d44b987-3a8b-4a42-971b-12f73a629fc4/51d84e63-9c50-42cc-bff0-036b701a1c78/o/1771331841/gskbrandmarkfullcolourrgb29859.png" alt="GSK Logo" />
+  </footer>
+<script>
+    function openModal(videoSrc) {
+      const modal = document.getElementById('videoModal');
+      const modalVideo = document.getElementById('modalVideo');
+      modalVideo.src = videoSrc;
+      modal.style.display = 'block';
+      modalVideo.play();
+    }
 
+    function closeModal() {
+      const modal = document.getElementById('videoModal');
+      const modalVideo = document.getElementById('modalVideo');
+      modal.style.display = 'none';
+      modalVideo.pause();
+      modalVideo.currentTime = 0;
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById('videoModal');
+      if (event.target === modal) {
+        closeModal();
+      }
+    }
+  </script>
+
+<div class="modal" id="videoModal">
+<div class="modal-content">
+<button class="close-button" id="closeModal">×</button>
+<video controls="" id="modalVideo" style="width: 100%; height: auto;"></video>
+</div>
+</div>
+<script>
+  const modal = document.getElementById('videoModal');
+  const modalVideo = document.getElementById('modalVideo');
+  const closeModal = document.getElementById('closeModal');
+
+  document.querySelectorAll('.video-item video').forEach(video => {
+    video.addEventListener('click', () => {
+      modal.style.display = 'block';
+      modalVideo.src = video.src;
+      modalVideo.play();
+    });
+  });
+
+  closeModal.addEventListener('click', () => {
+    modal.style.display = 'none';
+    modalVideo.pause();
+    modalVideo.currentTime = 0;
+    modalVideo.src = '';
+  });
+
+  window.addEventListener('click', (event) => {
+    if (event.target === modal) {
+      modal.style.display = 'none';
+      modalVideo.pause();
+      modalVideo.currentTime = 0;
+      modalVideo.src = '';
+    }
+  });
+</script>
 </body>
 </html>
-
